@@ -1,5 +1,6 @@
 import { CUSTOMCOLRS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   Image,
@@ -14,7 +15,7 @@ import {
 const ProfileScreen = () => {
   const name = "Tolu WebDev";
   const email = "toluwebdev@example.com";
-
+  let navigate = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -28,15 +29,14 @@ const ProfileScreen = () => {
           />
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.email}>{email}</Text>
-
-          <TouchableOpacity style={styles.editButton}>
-            <Text style={styles.editButtonText}>Edit Profile</Text>
-          </TouchableOpacity>
         </View>
 
         {/* Menu Section */}
         <View style={styles.menuSection}>
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigate.navigate("/myorder")}
+          >
             <Ionicons name="cube-outline" size={22} color="#333" />
             <Text style={styles.menuText}>My Orders</Text>
           </TouchableOpacity>
@@ -55,7 +55,10 @@ const ProfileScreen = () => {
             <Text style={styles.menuText}>Reviews</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigate.navigate("/billingAdress")}
+          >
             <Ionicons name="card-outline" size={22} color="#333" />
             <Text style={styles.menuText}>Billing Address</Text>
           </TouchableOpacity>

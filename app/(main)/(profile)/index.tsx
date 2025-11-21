@@ -1,6 +1,6 @@
 import { CUSTOMCOLRS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { router, useRouter } from "expo-router";
 import React from "react";
 import {
   Image,
@@ -35,24 +35,28 @@ const ProfileScreen = () => {
         <View style={styles.menuSection}>
           <TouchableOpacity
             style={styles.menuItem}
-            onPress={() => navigate.navigate("/myorder")}
+            onPress={() => navigate.navigate("/order")}
           >
             <Ionicons name="cube-outline" size={22} color="#333" />
             <Text style={styles.menuText}>My Orders</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
-            <Ionicons
-              name="chatbubble-ellipses-outline"
-              size={22}
-              color="#333"
-            />
+          <TouchableOpacity
+            onPress={() => router.push("/messages")}
+            style={styles.menuItem}
+          >
+            <View style={{ position: "relative" }}>
+              <Ionicons
+                name="chatbubble-ellipses-outline"
+                size={22}
+                color="#333"
+              />
+              {/* Badge */}
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>3</Text>
+              </View>
+            </View>
             <Text style={styles.menuText}>Messages</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.menuItem}>
-            <Ionicons name="star-outline" size={22} color="#333" />
-            <Text style={styles.menuText}>Reviews</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -87,6 +91,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 30,
   },
+  badge: {
+    position: "absolute",
+    top: -5,
+    right: -10,
+    backgroundColor: "red",
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    minWidth: 16,
+    minHeight: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  badgeText: {
+    color: "#fff",
+    fontSize: 10,
+    fontWeight: "600",
+  },
+
   profileImage: {
     width: 110,
     height: 110,

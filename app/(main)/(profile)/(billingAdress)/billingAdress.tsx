@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  Card,
-  Text,
-  IconButton,
-  FAB,
-  Portal,
-  Modal,
-  TextInput,
-  Button,
-} from "react-native-paper";
 import { CUSTOMCOLRS } from "@/constants/Colors";
+import { router } from "expo-router";
+import React, { useState } from "react";
+import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Button,
+  Card,
+  FAB,
+  IconButton,
+  Modal,
+  Portal,
+  Text,
+  TextInput,
+} from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Address {
   id: string;
@@ -68,6 +69,17 @@ const BillingAddressScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={styles.backButtonWrapper}
+        onPress={() => router.back()}
+      >
+        <IconButton
+          icon="arrow-left"
+          size={22}
+          iconColor={CUSTOMCOLRS.TEXT_DARK}
+          onPress={() => router.back()}
+        />
+      </TouchableOpacity>
       <Text variant="headlineSmall" style={styles.header}>
         Billing Addresses
       </Text>
@@ -86,10 +98,20 @@ const BillingAddressScreen = () => {
               <IconButton
                 icon="pencil"
                 size={20}
+                style={{
+                  borderColor: "transparent",
+                  backgroundColor: CUSTOMCOLRS.ACCENT,
+                }}
+                iconColor="white"
                 onPress={() => openEdit(item)}
               />
               <IconButton
                 icon="delete"
+                style={{
+                  borderColor: "transparent",
+                  backgroundColor: CUSTOMCOLRS.PRIMARY,
+                }}
+                iconColor="white"
                 size={20}
                 onPress={() => deleteAddress(item.id)}
               />
@@ -98,12 +120,7 @@ const BillingAddressScreen = () => {
         )}
       />
 
-      <FAB
-        icon="plus"
-        style={styles.fab}
-        onPress={openAdd}
-        color="white"
-      />
+      <FAB icon="plus" style={styles.fab} onPress={openAdd} color="white" />
 
       <Portal>
         <Modal
@@ -119,6 +136,9 @@ const BillingAddressScreen = () => {
             value={label}
             onChangeText={setLabel}
             mode="outlined"
+            outlineColor="black"
+            textColor="black"
+            activeOutlineColor={"black"}
             style={styles.input}
           />
           <TextInput
@@ -126,12 +146,15 @@ const BillingAddressScreen = () => {
             value={address}
             onChangeText={setAddress}
             mode="outlined"
-            multiline
+            outlineColor="black"
+            activeOutlineColor={"black"}
+            textColor="black"
             style={styles.input}
           />
           <Button
             mode="contained"
             onPress={saveAddress}
+            textColor="white"
             buttonColor={CUSTOMCOLRS.PRIMARY}
           >
             Save
@@ -145,13 +168,25 @@ const BillingAddressScreen = () => {
 export default BillingAddressScreen;
 
 const styles = StyleSheet.create({
+  backButtonWrapper: {
+    position: "absolute",
+    marginTop: 10,
+    top: 10,
+    left: 10,
+    zIndex: 1000,
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    elevation: 10,
+  },
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: CUSTOMCOLRS.BACKGROUND,
     paddingHorizontal: 16,
   },
   header: {
+    color: CUSTOMCOLRS.PRIMARY,
     fontWeight: "700",
+    marginTop: 40,
     marginVertical: 12,
   },
   card: {
@@ -163,9 +198,10 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: "600",
     fontSize: 16,
+    color: CUSTOMCOLRS.PRIMARY,
   },
   address: {
-    color: "gray",
+    color: CUSTOMCOLRS.ACCENT,
     marginTop: 2,
   },
   actions: {
@@ -185,10 +221,12 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontWeight: "600",
+    color: CUSTOMCOLRS.PRIMARY,
     fontSize: 16,
     marginBottom: 10,
   },
   input: {
+    backgroundColor: " transparent",
     marginBottom: 12,
   },
 });

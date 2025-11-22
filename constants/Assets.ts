@@ -65,6 +65,7 @@ export interface ProductInterface {
   sizes: Array<string>;
   date: number;
   bestseller: boolean;
+  reviews?: Array<{ name: string; ratings: number; reviewText: string }>;
 }
 
 export const PRODUCTS: Array<ProductInterface> = [
@@ -80,6 +81,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L"],
     date: 1716634345448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaab",
@@ -93,6 +102,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["M", "L", "XL"],
     date: 1716621345448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaac",
@@ -106,6 +123,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "L", "XL"],
     date: 1716234545448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaad",
@@ -119,6 +144,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "XXL"],
     date: 1716621345448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaae",
@@ -132,6 +165,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["M", "L", "XL"],
     date: 1716622345448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaaf",
@@ -145,6 +186,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "L", "XL"],
     date: 1716623423448,
     bestseller: true,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaag",
@@ -158,6 +207,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "L", "XL"],
     date: 1716621542448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaah",
@@ -171,6 +228,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716622345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaai",
@@ -184,6 +249,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["M", "L", "XL"],
     date: 1716621235448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaaj",
@@ -197,6 +270,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "L", "XL"],
     date: 1716622235448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaak",
@@ -210,6 +291,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L"],
     date: 1716623345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaal",
@@ -223,6 +312,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716624445448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaam",
@@ -236,6 +333,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716625545448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaan",
@@ -249,6 +354,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716626645448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaao",
@@ -262,6 +375,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716627745448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaap",
@@ -275,6 +396,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716628845448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaaq",
@@ -288,6 +417,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716629945448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaar",
@@ -301,6 +438,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716631045448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaas",
@@ -314,6 +459,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716632145448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaat",
@@ -340,6 +493,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716634345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaav",
@@ -353,6 +514,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716635445448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaaw",
@@ -366,6 +535,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716636545448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaax",
@@ -379,6 +556,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716637645448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaay",
@@ -405,6 +590,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716639845448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaba",
@@ -431,6 +624,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716642045448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabc",
@@ -444,6 +645,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716643145448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabd",
@@ -457,6 +666,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716644245448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabe",
@@ -470,6 +687,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716645345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabf",
@@ -496,6 +721,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716647545448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabh",
@@ -509,6 +742,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716648645448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabi",
@@ -522,6 +763,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716649745448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabj",
@@ -535,6 +784,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716650845448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabk",
@@ -548,6 +805,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716651945448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabl",
@@ -561,6 +826,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716653045448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabm",
@@ -574,6 +847,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716654145448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabn",
@@ -587,6 +868,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716655245448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabo",
@@ -600,6 +889,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716656345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabp",
@@ -613,6 +910,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716657445448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabq",
@@ -626,6 +931,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716658545448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabr",
@@ -639,6 +952,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716659645448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabs",
@@ -652,6 +973,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716660745448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabt",
@@ -665,6 +994,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716661845448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabu",
@@ -678,6 +1015,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716662945448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabv",
@@ -691,6 +1036,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716664045448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabw",
@@ -704,6 +1057,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716665145448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabx",
@@ -717,6 +1078,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716666245448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaaby",
@@ -730,6 +1099,14 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716667345448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
   {
     _id: "aaabz",
@@ -743,5 +1120,91 @@ export const PRODUCTS: Array<ProductInterface> = [
     sizes: ["S", "M", "L", "XL"],
     date: 1716668445448,
     bestseller: false,
+    reviews: [
+      {
+        name: "Tolu Oladoja",
+        ratings: 5,
+        reviewText:
+          "Very Nice Product i got one before this but i really love this over that ",
+      },
+    ],
   },
 ];
+
+export interface OrderInterface {
+  orderNumber: string;
+  orderDate: number;
+  numberOfItems: number;
+  status: "Delivered" | "Pending" | "Cancel";
+  orderTotal: number;
+  orderItems: Array<(typeof PRODUCTS)[number]>;
+}
+
+export const Order = [{}];
+
+export const ORDERS: Array<OrderInterface> = [
+  {
+    orderNumber: "ORD001",
+    orderDate: 1716634345448,
+    numberOfItems: 2,
+    status: "Delivered",
+    orderTotal: PRODUCTS[0].price + PRODUCTS[1].price,
+    orderItems: [PRODUCTS[0], PRODUCTS[1]],
+  },
+  {
+    orderNumber: "ORD002",
+    orderDate: 1716644345448,
+    numberOfItems: 3,
+    status: "Pending",
+    orderTotal: PRODUCTS[2].price + PRODUCTS[3].price + PRODUCTS[4].price,
+    orderItems: [PRODUCTS[2], PRODUCTS[3], PRODUCTS[4]],
+  },
+  {
+    orderNumber: "ORD003",
+    orderDate: 1716654345448,
+    numberOfItems: 1,
+    status: "Cancel",
+    orderTotal: PRODUCTS[5].price,
+    orderItems: [PRODUCTS[5]],
+  },
+  {
+    orderNumber: "ORD004",
+    orderDate: 1716664345448,
+    numberOfItems: 4,
+    status: "Delivered",
+    orderTotal:
+      PRODUCTS[6].price +
+      PRODUCTS[7].price +
+      PRODUCTS[8].price +
+      PRODUCTS[9].price,
+    orderItems: [PRODUCTS[6], PRODUCTS[7], PRODUCTS[8], PRODUCTS[9]],
+  },
+];
+
+export const dummyOrders = [
+  {
+    id: "1",
+    name: PRODUCTS[0].name,
+    image: PRODUCTS[0].image[0],
+    price: PRODUCTS[0].price,
+    date: "Nov 3, 2025",
+    status: "Delivered",
+  },
+  {
+    id: "2",
+    name: PRODUCTS[1].name,
+    image: PRODUCTS[1].image[0],
+    price: PRODUCTS[1].price,
+    date: "Nov 5, 2025",
+    status: "Shipped",
+  },
+];
+
+// Example messages data
+export const messages = [
+  { id: 1, sender: "Alice", text: "Hey, how are you?", read: false },
+  { id: 2, sender: "Bob", text: "Your order has shipped.", read: false },
+  { id: 3, sender: "Charlie", text: "Can we meet tomorrow?", read: false },
+];
+
+// Count unread messages

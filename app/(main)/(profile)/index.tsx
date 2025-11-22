@@ -1,5 +1,6 @@
 import { CUSTOMCOLRS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import { router, useRouter } from "expo-router";
 import React from "react";
 import {
   Image,
@@ -14,7 +15,7 @@ import {
 const ProfileScreen = () => {
   const name = "Tolu WebDev";
   const email = "toluwebdev@example.com";
-
+  let navigate = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -28,34 +29,40 @@ const ProfileScreen = () => {
           />
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.email}>{email}</Text>
-
-          <TouchableOpacity style={styles.editButton}>
-            <Text style={styles.editButtonText}>Edit Profile</Text>
-          </TouchableOpacity>
         </View>
 
         {/* Menu Section */}
         <View style={styles.menuSection}>
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigate.navigate("/order")}
+          >
             <Ionicons name="cube-outline" size={22} color="#333" />
             <Text style={styles.menuText}>My Orders</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
-            <Ionicons
-              name="chatbubble-ellipses-outline"
-              size={22}
-              color="#333"
-            />
+          <TouchableOpacity
+            onPress={() => router.push("/messages")}
+            style={styles.menuItem}
+          >
+            <View style={{ position: "relative" }}>
+              <Ionicons
+                name="chatbubble-ellipses-outline"
+                size={22}
+                color="#333"
+              />
+              {/* Badge */}
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>3</Text>
+              </View>
+            </View>
             <Text style={styles.menuText}>Messages</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
-            <Ionicons name="star-outline" size={22} color="#333" />
-            <Text style={styles.menuText}>Reviews</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigate.navigate("/billingAdress")}
+          >
             <Ionicons name="card-outline" size={22} color="#333" />
             <Text style={styles.menuText}>Billing Address</Text>
           </TouchableOpacity>
@@ -84,6 +91,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 30,
   },
+  badge: {
+    position: "absolute",
+    top: -5,
+    right: -10,
+    backgroundColor: "red",
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    minWidth: 16,
+    minHeight: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  badgeText: {
+    color: "#fff",
+    fontSize: 10,
+    fontWeight: "600",
+  },
+
   profileImage: {
     width: 110,
     height: 110,

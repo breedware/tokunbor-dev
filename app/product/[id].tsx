@@ -18,6 +18,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [toShow, setToShow] = useState<string>("description");
 
   useEffect(() => {
     if (id) {
@@ -82,7 +83,7 @@ const ProductDetails = () => {
               style={{ marginRight: 2 }}
             />
           ))}
-          <Text style={styles.ratingCount}>(122)</Text>
+          <Text style={styles.ratingCount}>({product.reviews.length})</Text>
         </View>
 
         <Text variant="titleLarge" style={styles.price}>
@@ -137,19 +138,66 @@ const ProductDetails = () => {
       {/* Description & Review Section */}
       <View style={styles.section}>
         <View style={styles.tabHeader}>
-          <Text style={[styles.tabItem, styles.activeTab]}>Description</Text>
-          <Text style={styles.tabItem}>Reviews (122)</Text>
+          <Text
+            style={[
+              styles.tabItem,
+              toShow === "description" ? styles.activeTab : "",
+            ]}
+            onPress={() => setToShow("description")}
+          >
+            Description
+          </Text>
+          <Text
+            style={[
+              styles.tabItem,
+              toShow === "reviews" ? styles.activeTab : "",
+            ]}
+            onPress={() => setToShow("reviews")}
+          >
+            Reviews ({product.reviews.length})
+          </Text>
         </View>
         <View style={styles.tabContent}>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            dolores illum suscipit eveniet iste perspiciatis eius totam minus
-            assumenda aut.
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-            dolorem!
-          </Text>
+          {toShow === "description" ? (
+            <Text style={{ color: "gray", lineHeight: 20 }}>
+              {product.description}
+            </Text>
+          ) : product.reviews.length > 0 ? (
+            product.reviews.map((review, index) => (
+              <Card key={index} style={{ marginBottom: 12, padding: 12 }}>
+                {/* Reviewer Name + Stars */}
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontWeight: "600" }}>{review.name}</Text>
+
+                  {/* ⭐ Dynamic Star Rating */}
+                  <View style={{ flexDirection: "row" }}>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Icon
+                        key={i}
+                        source={i < review.ratings ? "star" : "star-outline"}
+                        size={16}
+                        color="#FFD700"
+                        style={{ marginRight: 2 }}
+                      />
+                    ))}
+                  </View>
+                </View>
+
+                {/* Review Comment */}
+                <Text style={{ marginTop: 8, color: "#444" }}>
+                  {review.reviewText}
+                </Text>
+              </Card>
+            ))
+          ) : (
+            <Text style={{ color: "gray" }}>No reviews yet.</Text>
+          )}
         </View>
       </View>
     </ScrollView>

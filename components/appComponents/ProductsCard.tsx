@@ -1,4 +1,3 @@
-import { ProductInterface } from "@/constants/Assets";
 import { CUSTOMCOLRS } from "@/constants/Colors";
 import { useRouter } from "expo-router";
 import { Dimensions, Image, StyleSheet, View } from "react-native";

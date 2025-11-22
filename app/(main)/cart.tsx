@@ -6,11 +6,11 @@ import {
   Dimensions,
   FlatList,
   Image,
-  SafeAreaView,
   StyleSheet,
   View,
 } from "react-native";
 import { Button, Card, Divider, IconButton, Text } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -109,24 +109,24 @@ const CartScreen = () => {
   const updateQuantity = (itemId: string, newQuantity:number) => {
     if (newQuantity < 1) return;
 
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
+    setCartItems((prevItems: any) =>
+      prevItems.map((item: any) =>
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       )
     );
   };
 
   const removeItem = (itemId: string) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    setCartItems((prevItems: any) => prevItems.filter((item: any) => item.id !== itemId));
   };
 
   const cartSubtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum: number, item: any) => sum + item.price * item.quantity,
     0
   );
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cartItems.reduce((sum: number, item: any) => sum + item.quantity, 0);
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: {item: any}) => (
     <CartItem
       item={item}
       updateQuantity={updateQuantity}

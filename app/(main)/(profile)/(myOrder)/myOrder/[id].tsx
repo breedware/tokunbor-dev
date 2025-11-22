@@ -36,7 +36,7 @@ const MyOrders = () => {
     setData(order || null);
   }, [id]);
   console.log(data);
-  const openModal = (order) => {
+  const openModal = (order: any) => {
     setSelectedOrder(order);
     setVisible(true);
   };
@@ -49,7 +49,7 @@ const MyOrders = () => {
 
   const submitReview = () => {
     console.log("Review Submitted:", {
-      orderId: selectedOrder.id,
+      orderId: (selectedOrder as any).id,
       rating,
       comment,
     });
@@ -93,7 +93,7 @@ const MyOrders = () => {
               subtitle={`Order ID: #${order._id}`}
             />
             <Card.Cover
-              source={order.image[0]}
+              source={{uri: order.image[0]}}
               style={styles.productImage}
               resizeMode="contain"
             />

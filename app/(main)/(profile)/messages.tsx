@@ -3,13 +3,13 @@ import { CUSTOMCOLRS } from "@/constants/Colors";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
 } from "react-native";
 import { Avatar, Card, IconButton, Text } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Sample messages data — all unread
 const messagesData = messages;

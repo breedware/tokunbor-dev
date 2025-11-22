@@ -4,8 +4,9 @@ import { PRODUCTS } from "@/constants/Assets";
 import { CUSTOMCOLRS } from "@/constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
 import React, { useMemo, useState } from "react";
-import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { Appbar, Chip, Searchbar, Text } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Corrected interface to match the function signature
 interface FixedHeaderProps {
@@ -153,7 +154,7 @@ const index = () => {
               )}
 
               <Text
-                style={{ marginLeft: "10", fontWeight: "700", fontSize: "20" }}
+                style={{ marginLeft: 10, fontWeight: 700, fontSize: 20 }}
               >
                 Products
               </Text>

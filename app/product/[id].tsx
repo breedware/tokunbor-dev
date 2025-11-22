@@ -46,7 +46,7 @@ const ProductDetails = () => {
       {/* Image Gallery */}
       <Card style={styles.imageCard}>
         <Image
-          source={selectedImage}
+          source={{uri: `${selectedImage}`}}
           style={styles.mainImage}
           resizeMode="contain"
         />
@@ -60,7 +60,7 @@ const ProductDetails = () => {
                 selectedImage === img && styles.activeThumbnail,
               ]}
             >
-              <Image source={img} style={styles.thumbnail} resizeMode="cover" />
+              <Image source={{uri: img}} style={styles.thumbnail} resizeMode="cover" />
             </TouchableOpacity>
           ))}
         </View>
@@ -80,7 +80,7 @@ const ProductDetails = () => {
               source={star <= 4 ? "star" : "star-outline"}
               size={18}
               color="#FFD700"
-              style={{ marginRight: 2 }}
+              // style={{ marginRight: 2 }}
             />
           ))}
           <Text style={styles.ratingCount}>({product.reviews.length})</Text>
@@ -163,7 +163,7 @@ const ProductDetails = () => {
               {product.description}
             </Text>
           ) : product.reviews.length > 0 ? (
-            product.reviews.map((review, index) => (
+            product.reviews.map((review: unknown | any, index: number) => (
               <Card key={index} style={{ marginBottom: 12, padding: 12 }}>
                 {/* Reviewer Name + Stars */}
                 <View
@@ -183,7 +183,7 @@ const ProductDetails = () => {
                         source={i < review.ratings ? "star" : "star-outline"}
                         size={16}
                         color="#FFD700"
-                        style={{ marginRight: 2 }}
+                        // style={{ marginRight: 2 }}
                       />
                     ))}
                   </View>

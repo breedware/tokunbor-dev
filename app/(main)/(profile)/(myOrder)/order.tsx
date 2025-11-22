@@ -59,7 +59,7 @@ const OrderCard = ({ order }: { order: (typeof ORDERS)[0] }) => {
 
       <View style={styles.itemsContainer}>
         {order.orderItems.map((item, idx) => (
-          <Image key={idx} source={item.image[0]} style={styles.itemImage} />
+          <Image key={idx} source={{uri: item.image[0]}} style={styles.itemImage} />
         ))}
       </View>
 

@@ -1,11 +1,13 @@
 import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import {  ScrollView, StyleSheet, View } from "react-native";
 import {
+  Icon,
   MD3LightTheme,
   Provider as PaperProvider,
   Text,
 } from "react-native-paper";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+// import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Custom Theme Colors extracted from the image
 const COLORS = {
@@ -26,7 +28,7 @@ const timelineData = [
   { title: "DELIVERED", date: "25-10", status: "current" },
 ];
 
-const TimelineItem = ({ item, isLast }) => {
+const TimelineItem = ({ item, isLast }: {item: any, isLast: any}) => {
   // Determine styles based on status
   const isCurrent = item.status === "current";
   const activeColor = isCurrent ? COLORS.green : COLORS.teal;
@@ -48,15 +50,15 @@ const TimelineItem = ({ item, isLast }) => {
         >
           {isCurrent ? (
             // The Green Ring Icon for current status
-            <MaterialCommunityIcons
-              name="record-circle-outline"
+            <Icon
+              source="record-circle-outline"
               size={28}
               color={activeColor}
-              style={{ backgroundColor: "white", borderRadius: 15 }}
+              // style={{ backgroundColor: "white", borderRadius: 15 }}
             />
           ) : (
             // The Checkmark for past status
-            <MaterialCommunityIcons name="check" size={16} color="white" />
+            <Icon source="check" size={16} color="white" />
           )}
         </View>
 

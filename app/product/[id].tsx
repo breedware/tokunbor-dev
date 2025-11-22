@@ -60,7 +60,7 @@ const ProductDetails = () => {
                 selectedImage === img && styles.activeThumbnail,
               ]}
             >
-              <Image source={{uri: img}} style={styles.thumbnail} resizeMode="cover" />
+              {/* <Image source={{uri: `${img}`}} style={styles.thumbnail} resizeMode="cover" /> */}
             </TouchableOpacity>
           ))}
         </View>
